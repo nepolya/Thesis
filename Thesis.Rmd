@@ -1,0 +1,39 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+```{r}
+library(lingtypology)
+```
+
+
+```{r}
+map_villages <- data.frame(village = c("Мосеево", "Калино", "Езевец", "Баковская", "Кеба", "Веегора", "Ваймуша", "Явзора", "Лавела", "Занюхча", "Тинева", "Подольская", "Зайцево", "Вадюга", "Сельцо", "Тимошино", "Финёв Луг", "Козынево", "Неронов Бор", "Ильмень", "Хотяж", "Курицко", "Лужниково", "Пуршево", "Балаши", "Барабаны", "Шетнево", "Макеево", "Стайки", "Жанвиль", "Соино", "Нехочи", "Спиридонова Буда", "Мугреево-Никольское", "Хотимль", "Погорелка", "Печерники", "Новопанское", "Свишни", "Тростное", "Роговатое", "Малинино", "Мелиховская", "Раздорвская"  ),
+                           latitude = c(65.774168, 65.785130, 65.707983, 65.723015, 64.354673, 64.288509, 63.971728, 63.710900, 63.624225, 63.433635, 62.942563, 62.945693, 62.939084, 62.684097, 62.486109, 62.012085, 58.953496, 58.398789, 58.405494, 58.395549, 58.374984, 58.347603, 57.401888, 56.769380, 56.769380, 56.794564, 56.229321, 56.212094, 54.123756, 54.019225, 53.972324, 53.421208, 52.282288, 56.631664, 56.652829, 56.661086, 54.130472, 54.340061, 52.456978, 52.698905, 51.223969, 52.267868, 47.479470, 47.542390),
+                           longitude = c(46.179245, 46.263031, 46.516841, 46.387124, 46.205754, 44.326406, 44.513615, 45.418605, 45.534703, 46.542020, 46.130556, 46.374296, 46.427943, 46.496009, 43.777392, 45.213367, 31.081287, 31.218361, 31.177864, 31.194241, 31.138833, 31.154966, 34.136241, 28.669292, 28.669292, 28.684060, 31.614356, 31.619593, 32.012301, 31.898583, 31.994433, 34.925124, 31.780957, 42.237392, 41.710890, 56.661086, 39.260088, 39.063240, 38.256957, 38.374125, 38.370091, 39.345140, 40.489989, 40.649961)
+  
+)
+```
+
+
+```{r}
+
+map.feature(languages = "Russian",
+            latitude = map_villages$latitude,
+            longitude = map_villages$longitude, 
+            label = map_villages$village,
+            label.position = "left",
+            label.hide = FALSE,
+            label.fsize = 11)
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
